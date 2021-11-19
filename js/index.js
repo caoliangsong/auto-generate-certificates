@@ -117,6 +117,7 @@
             });
 
             self.datetime = datetime;
+            console.log(allNames);
             for (let i = 0; i < allNames.length; i++) {
               (function (j) {
                 setTimeout(() => {
