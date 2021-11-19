@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient(#ed080b,#eee0af) no-repeat;
+    min-height: 100vh;
+}
+h1{
+    font-size: 28px;
+    text-align: center;
+    padding: 20px;
+    color: #fee5a5;
+}
+.input-wrap{
+    width: 700px;
+    margin: 40px auto;
+    color: #fff;
+    text-align: center;
+}
+input,button{
+    padding: 6px 10px;
+    border: 1px solid #eee0af;
+    border-radius: 4px;
+}
+input:focus{outline:none;}
+button{
+    cursor: pointer;
+}
+.cert {
+    width: 500px;
+    margin: 40px auto;
+    border: 10px solid #eee0af;
+}
+.cert img{
+    width: 500px;
+    height: auto;
+}
+.hide{
+    display: none;
+}
+.down{
+    background: #2e3848;
+    color: #fff;
+}

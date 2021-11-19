@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>明康汇-自动生成学员证书</title>
+    <link href="./styles/index.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1 class="h1">明康汇-自动生成学员证书
+                <small>V老婆专用版</small>
+            </h1>
+        </header>
+    
+        <section class="input-wrap">
+            姓名：<input type="text" placeholder="请输入姓名" v-model = "username" /> 
+            日期：<input type="date" placeholder="请选择日期" v-model = "datetime" />
+            <button @click="onGenerateHandle">预览生成</button> 
+            <button v-if ="hasCert" @click="onDownloadHandle" class="down">下载证书</button> 
+        </section>
+    </div>
+
+    <div class="cert">
+        <img src="./img/demo.png"  class="hide" id="demo"/>
+        <canvas id="myCanvas" />
+    </div>
+
+    <canvas id="myCanvas2" />
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.min.js"></script>
+    <script src="./js/index.js"></script>
+
+</body>
+</html>
