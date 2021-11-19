@@ -5,9 +5,20 @@
       username: "",
       datetime: "",
       hasCert: false,
-      img:''
+      img:'',
+      percent: 20
+    },
+    created(){
+      // 预加载模板图3M
+      const self = this
+      let image = new Image()
+      image.src = './img/demo.png'
+      image.onload = function(r){
+        self.percent = 100
+      }
     },
     methods: {
+
       onGenerateHandle() {
         if (!this.username || !this.datetime) {
           return alert("请输入姓名或日期");
@@ -27,8 +38,8 @@
         })
       },
       onDownloadHandle(){
-        // let canvas = document.createElement("canvas");
-        let canvas = document.getElementById("myCanvas2");
+        let canvas = document.createElement("canvas");
+        // let canvas = document.getElementById("myCanvas2");
         canvas.width = this.img.width;
         canvas.height = this.img.height;
         let ctx = canvas.getContext("2d");
@@ -37,7 +48,7 @@
           console.log(res)
           var a = document.createElement('a')
           var url = window.URL.createObjectURL(res)
-          a.download = `${this.username}.png`
+          a.download = `${this.username}-明康汇结业证书.png`
           a.href = url
           a.click()
           window.URL.revokeObjectURL(url)

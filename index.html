@@ -21,12 +21,15 @@
             <button @click="onGenerateHandle">预览生成</button> 
             <button v-if ="hasCert" @click="onDownloadHandle" class="down">下载证书</button> 
         </section>
-    </div>
+    
 
     <div class="cert">
+        <div class="percent" v-if="percent != 100">模板加载中,请稍后操作...{{percent}}%</div>
         <img src="./img/demo.png"  class="hide" id="demo"/>
         <canvas id="myCanvas" />
     </div>
+
+</div>
 
     <canvas id="myCanvas2" />
 
