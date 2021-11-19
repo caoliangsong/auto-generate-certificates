@@ -106,7 +106,7 @@
                   datetime = `20${t[2]}-${t[0]}-${t[1]}`;
                 }
 
-                if (key.indexOf("B") > -1 && key >= "B3") {
+                if (key.indexOf("B") > -1 && key.slice(1) > 3) {
                   allNames.push(worksheet[key].v);
                 }
                 console.log(
