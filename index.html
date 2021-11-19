@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>明康汇-自动生成学员证书</title>
     <link href="./styles/index.css" rel="stylesheet" />
-</head>
-<body>
+  </head>
+  <body>
     <div id="app">
-        <header>
-            <h1 class="h1">明康汇-自动生成学员证书
-                <small>V老婆专用版</small>
-            </h1>
-        </header>
-    
-        <section class="input-wrap">
-            姓名：<input type="text" placeholder="请输入姓名" v-model = "username" /> 
-            日期：<input type="date" placeholder="请选择日期" v-model = "datetime" />
-            <button @click="onGenerateHandle">预览</button> 
-            <button @click="onDownloadHandle" class="down">下载证书</button> 
-        </section>
-    
+      <header>
+        <h1 class="h1">
+          明康汇-自动生成学员证书
+          <small>V老婆专用版</small>
+        </h1>
+      </header>
 
-    <div class="cert">
-        <div class="percent" v-if="percent != 100">模板加载中,请稍后操作...{{percent}}%</div>
-        <img src="./img/demo.png"  class="hide" id="demo"/>
+      <section class="input-wrap">
+        姓名：<input type="text" placeholder="请输入姓名" v-model="username" />
+        日期：<input type="date" placeholder="请选择日期" v-model="datetime" />
+        <button @click="onGenerateHandle">预览</button>
+        <button @click="onDownloadHandle" class="down">下载证书</button>
+        <input
+          type="file"
+          id="fileElem"
+          style="display: none"
+          @change="onImportHandle"
+        />
+        <label for="fileElem" class="file">批量导入</label>
+      </section>
+
+      <div class="cert">
+        <div class="percent" v-if="percent != 100">
+          模板加载中,请稍后操作...{{percent}}%
+        </div>
         <canvas id="myCanvas" />
+      </div>
     </div>
-
-</div>
 
     <canvas id="myCanvas2" />
 
     <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <script src="./js/index.js"></script>
-
-</body>
+  </body>
 </html>
